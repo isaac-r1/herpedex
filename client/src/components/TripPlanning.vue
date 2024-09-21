@@ -9,6 +9,11 @@
             <p>{{ guide.description }}</p>
           </li>
         </ul>
+
+        <h2>Active Trips</h2>
+        <p>
+          <router-link to="/active-trips">View your active trips</router-link>
+        </p>
       </main>
     </div>
   </template>
@@ -48,5 +53,12 @@
   }
   li {
     margin-bottom: 20px;
+  }
+  .content a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .content a:hover {
+    text-decoration: underline;
   }
   </style>

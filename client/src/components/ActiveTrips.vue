@@ -1,8 +1,8 @@
 <template>
-    <div class="herpedex">
+    <div class="active-trips">
       <Sidebar />
       <main class="content">
-        <h1 class="title">The Herpedex</h1>
+        <h1 class="title">Active Trips</h1>
         <slot></slot>
       </main>
     </div>
@@ -12,7 +12,7 @@
   import Sidebar from './SideBar.vue'
   
   export default {
-    name: 'HerpedexPage',
+    name: 'ActiveTrips',
     components: {
       Sidebar
     }
@@ -20,7 +20,7 @@
   </script>
   
   <style scoped>
-  .herpedex {
+  .active-trips {
     display: flex;
   }
   
@@ -28,7 +28,7 @@
     flex: 1;
     padding: 20px;
   }
-
+  
   .title {
     font-size: 24px;
     margin-bottom: 20px;

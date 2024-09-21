@@ -7,6 +7,7 @@ import TripPlanning from '@/components/TripPlanning.vue'
 import HerpedexPage from '@/components/HerpedexPage.vue'
 import AccountPage from '@/components/AccountPage.vue'
 import StartTrip from '@/components/StartTrip.vue'
+import ActiveTrips from '@/components/ActiveTrips.vue'
 //import Register from '../views/Register.vue'
 
 
@@ -50,6 +51,11 @@ const routes = [
     path: '/start-trip',
     name: 'StartTrip',
     component: StartTrip        
+  },
+  {
+    path: '/active-trips',
+    name: 'ActiveTrips',
+    component: ActiveTrips
   }
 ]
 
