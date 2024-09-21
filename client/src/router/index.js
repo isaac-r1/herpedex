@@ -6,6 +6,7 @@ import DashboardPage from '@/components/DashboardPage.vue'
 import TripPlanning from '@/components/TripPlanning.vue'
 import HerpedexPage from '@/components/HerpedexPage.vue'
 import AccountPage from '@/components/AccountPage.vue'
+import StartTrip from '@/components/StartTrip.vue'
 //import Register from '../views/Register.vue'
 
 
@@ -44,6 +45,11 @@ const routes = [
     path: '/account',
     name: 'AccountPage',
     component: AccountPage
+  },
+  {
+    path: '/start-trip',
+    name: 'StartTrip',
+    component: StartTrip        
   }
 ]
 
