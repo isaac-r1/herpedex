@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-//import Home from '../views/Home.vue'
-import LandingPage from '../components/LandingPage.vue'
 import LoginPage from '../components/LoginPage.vue'
+import LandingPage from '../components/LandingPage.vue'
+import RegistrationPage from '../components/RegistrationPage.vue'
 //import Register from '../views/Register.vue'
+
 
 const routes = [
   {
@@ -14,16 +15,17 @@ const routes = [
     path: '/login',
     name: 'LoginPage',
     component: LoginPage
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: RegistrationPage
   }
-//   {
-//     path: '/register',
-//     name: 'Register',
-//     component: Register
-//   }
 ]
 
+
 const router = createRouter({
-  history: createWebHistory(),  // Call the function here
+  history: createWebHistory(),
   routes
 })
 
