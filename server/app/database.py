@@ -1,9 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+import os
+from dotenv import load_dotenv
 
-# Database URL
-DATABASE_URL = "postgresql://postgres:snake123@localhost:5433/herpedexdb"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Create the engine
 engine = create_engine(DATABASE_URL)
