@@ -3,7 +3,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/login">Login</router-link>
     </nav>
-    <div class="Register">
+    <div class="register">
       <h2>Register</h2>
       <form @submit.prevent="onSubmit">
         <div class="form-group">
@@ -63,7 +63,7 @@
   </script>
   
   <style scoped>
-  .login {
+  .register {
     max-width: 300px;
     margin: 0 auto;
   }
@@ -116,4 +116,5 @@ nav {
   nav a:last-child {
     margin-right: 0; 
 }
+
   </style>

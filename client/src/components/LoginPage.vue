@@ -35,7 +35,7 @@
         console.log('Login attempted', username.value)
         // Here you would typically call your login API
         // For now, we'll just navigate to the home page
-        router.push('/')
+        router.push('/dashboard')
       }
   
       return {
