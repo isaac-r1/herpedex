@@ -3,10 +3,9 @@
       <nav>
         <ul>
           <li><router-link to="/dashboard">Community</router-link></li>
-          <li><a href="#Herpedex">Herpedex</a></li>
+          <li><router-link to="/herpedex">The Herpedex</router-link></li>
           <li><router-link to="/trip-planning">Trip planning</router-link></li>
-          <li><a href="#Friends">Friends</a></li>
-          <li><a href="#Account">Account</a></li>
+          <li><router-link to="/account">Account</router-link></li>
         </ul>
       </nav>
     </aside>
