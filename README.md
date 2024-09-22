@@ -15,3 +15,8 @@ Liscense:
 For any questions or suggestions, feel free to contact us:
 Email: isaac.roy107@gmail.com
 
+Team member names:
+- Isaac Roy isaac.roy106@gmail.com
+- Xian Lin stupidhw@gmail.com
+- Grace Chi gracechi@seas.upenn.edu
+- Chinmay Govind cgovind@seas.upenn.edu
