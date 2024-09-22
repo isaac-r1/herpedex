@@ -6,17 +6,12 @@
     background-color: #e6ffe6; /* Pale green background */
 }
 
-.container {
-    display: flex;
-    flex-grow: 1; /* Allow the container to grow */
-}
-
 /* Sidebar styling */
 .sidebar {
     width: 250px; /* Adjust according to your design */
     background-color: #0eb052;
     color: white;
-    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    flex-shrink: 0;
 }
 
 /* Centering the trip form */
@@ -27,12 +22,6 @@
     flex-grow: 1;            /* Allow it to grow to fill space */
 }
 
-/* Inner container for the form */
-.form-container {
-    display: flex;
-    justify-content: flex-end; /* Align the form to the right */
-    width: 100%;              /* Full width of the start-trip */
-}
 
 /* Content styling */
 .content {
@@ -48,6 +37,58 @@
     color: #000000; /* Text color */
 }
 
+/* New wrapper for centering content */
+.content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: right; /* Centers vertically */
+    height: 100vh;/* Allow the container to grow */
+}
+
+.h2 {
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    margin: 0; /* Remove all margins */
+    padding: 1rem 0; /* Add vertical padding instead of margin */
+    position: absolute; /* Position absolutely within the relative container */
+    top: 0; /* Align to the top of the container */
+    left: 0; /* Align to the left of the container */
+    right: 0; /* Stretch across the container */
+}
+
+/* Form container styling */
+.formContainer {
+    position: absolute;
+    top: 27%; /* Changed from 50% to 45% to move it up */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Individual form group styling */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
 /* Form styling */
 .form {
     display: flex;
@@ -58,6 +99,7 @@
 
 .label {
     font-weight: bold;
+    color: #000000;
 }
 
 .input {
@@ -65,7 +107,7 @@
     font-size: 1rem;
     background-color: #ffffff; /* Input background */
     color: #000000; /* Input text color */
-    border: 1px solid #cccccc; /* Border for visibility */
+    border: 1px solid #000000; /* Border for visibility */
     border-radius: 5px; /* Rounded corners */
 }
 
@@ -85,7 +127,10 @@
     background-color: #45a049;
 }
 
+
+
 .multiselect {
     margin-bottom: 1rem;
     max-width: 100%;
+    color: #000000;
 }
