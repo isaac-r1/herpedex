@@ -11,7 +11,7 @@ function App() {
     <div id="app">
       {/* Header */}
       <header className={styles.header}>
-        <h1 className={styles.logo}>My Landing Page</h1>
+        <h1 className={styles.logo}>Welcome to Herpedex!</h1>
         <nav>
           <a href="#features">Features</a>
           <a onClick={() => redirectToLoginPage()}>Login</a>
@@ -23,7 +23,7 @@ function App() {
       <section className={styles.hero}>
         <div className={styles.hero_content}>
           <h2>Herpedex</h2>
-          <p>Like a Pokedex but for Snakes</p>
+          <p>Like a Pokedex but for Reptiles/Amphibians</p>
         </div>
       </section>
 
@@ -32,16 +32,16 @@ function App() {
         <h2>Features</h2>
         <div className={styles.feature_list}>
           <div className={styles.feature}>
-            <h3>Feature 1</h3>
-            <p>Our first amazing feature</p>
+            <h3>Trip Planning</h3>
+            <p>Helps herpers plan routes and track locations of reptiles and amphibians</p>
           </div>
           <div className={styles.feature}>
-            <h3>Feature 2</h3>
-            <p>Another great feature</p>
+            <h3>Conservation Efforts</h3>
+            <p>Helps herpers track and report on endangered & invasive species</p>
           </div>
           <div className={styles.feature}>
-            <h3>Feature 3</h3>
-            <p>More reasons to love us</p>
+            <h3>Community</h3>
+            <p>Allows herpers to share sightings, photos, and locations with friends and others!</p>
           </div>
         </div>
       </section>

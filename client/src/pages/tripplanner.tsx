@@ -11,9 +11,11 @@ const TripPlanner: React.FC = () => {
           <div className={styles.tripPlannerContent}>
             <h1>Welcome to Herpedex</h1>
             <p>
-              “Herping”, or the activity of finding snakes and amphibians and observing them in the wild, is a fun activity that can be enjoyed by everyone. Here are some tips and tricks to enhance your experience:
+              “Herping”, or the activity of finding repitles and amphibians and observing them in the wild, is a fun activity that can be enjoyed by everyone. Here are some tips and tricks to enhance your experience:
             </p>
-
+            <p>
+                Using Herpedex will allow you to contribute to databases that environmental and conservation groups use to track and monitor invasive/threatened species.
+            </p>
             <h2>Packing</h2>
             <p>
               Experienced “herpers” like to bring items such as snake hooks, flashlights, water, and snacks. Protective equipment can include gloves and protective clothing. Be sure to bring whatever can keep both you and the herps safe!
