@@ -2,6 +2,12 @@ from flask import Flask
 from flask import render_template, redirect, url_for, request
 import snakes 
 import json 
+from propelauth_flask import init_auth, current_user
+
+auth = init_auth(
+    "https://5623171022.propelauthtest.com",
+    "120e09ddddb5c6568a114c425e3c9c5ebdc33ea6a3136de8c730d9cc1e5bc068832d93cfaa2c7e9dae40dabd2bb642f6"
+    )        
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -49,6 +55,11 @@ def tripplan(name=None):
 @app.route('/')
 def index(name=None):
     return render_template('index.html')
+
+@app.route("/api/whoami")
+def who_am_i():
+    """This route is protected, current_user is always set"""
+    return {"user_id": current_user.user_id}
 
 
 @app.route('/api/creatures')
