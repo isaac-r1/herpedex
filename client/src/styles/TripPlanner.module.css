@@ -1,0 +1,72 @@
+/* Container for the page */
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5; /* Light background for the page */
+  }
+  
+  /* Sidebar stays fixed on the left */
+  .Sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    flex-shrink: 0; /* Sidebar doesn't shrink */
+  }
+  
+  /* Main content area to the right of the sidebar */
+  .mainContent {
+    flex-grow: 1;
+    background-color: white; /* White background for the content */
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to start from the top */
+    padding-top: 10px; /* Moves the content even higher */
+  }
+  
+  /* Trip planner content centered in the main area */
+  .tripPlannerContainer {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Styling for the content */
+  .tripPlannerContent {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .tripPlannerContent h1 {
+    color: #056a3b;
+    font-size: 22px; /* Slightly smaller font for the main heading */
+  }
+  
+  .tripPlannerContent h2 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px; /* Smaller font for subheadings */
+  }
+  
+  .tripPlannerContent p,
+  .tripPlannerContent ul {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #555;
+    font-size: 16px; /* Smaller font for regular text */
+  }
+  
+  .tripPlannerContent ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  /* Signature text */
+  .signature {
+    margin-top: 40px;
+    font-style: italic;
+    color: #007bff;
+    font-size: 16px; /* Slightly smaller signature text */
+  }
+  

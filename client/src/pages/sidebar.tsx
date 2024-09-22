@@ -12,7 +12,8 @@ function Sidebar() {
     <a href="https://www.reddit.com/r/herpetology/">Community</a>
     <a href="upload">Upload Photo</a>
     <a href="herpedex">Herpedex</a>
-    <a href="plan-trip">Plan A Trip</a>
+    <a href="tripplanning">Trip Guide</a>
+    <a href="starttrip">Start A Trip</a>
     <a onClick={() => redirectToAccountPage()}>Account</a>
     <a href="whoami">Who Am I</a>
 </div>
