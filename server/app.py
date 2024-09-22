@@ -140,7 +140,7 @@ def who_am_i():
 
 
 
-UPLOAD_FOLDER = 'static/uploads/'
+UPLOAD_FOLDER = 'server/static/uploads/'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 @app.route('/upload', methods=['POST'])
 def fileUpload():
@@ -149,8 +149,8 @@ def fileUpload():
     file = request.files['file'] 
     filename = secure_filename(file.filename)
     ext = filename.split('.')[1]
-    destination="".join([UPLOAD_FOLDER, "/", request.form['snakeName'], ".", ext])
-    print("Saving to " + "".join([UPLOAD_FOLDER, "/", request.form['snakeName'], ".", ext]))
+    destination="".join([UPLOAD_FOLDER,  request.form['snakeName'], ".", ext])
+    print("Saving to ")
     file.save(destination)
     response="Whatever you wish too return"
     return response
