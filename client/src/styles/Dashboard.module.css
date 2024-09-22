@@ -1,0 +1,19 @@
+.container {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+
+
+/* Main content area */
+.mainContent {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+}
+
+.mainContent h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
