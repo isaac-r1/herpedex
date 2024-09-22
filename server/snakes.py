@@ -2,6 +2,7 @@ import requests
 import json
 
 def fetch_species_data():
+
     # iNaturalist API URL
     url = "https://api.inaturalist.org/v1/observations/species_counts"
     
@@ -49,3 +50,5 @@ def fetch_species_data():
     else:
         print(f"Failed to fetch data: {response.status_code}")
         return []
+    
+print(fetch_species_data()[:50])
