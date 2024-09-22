@@ -31,28 +31,46 @@
   
   <script>
   import { ref, computed } from 'vue'
-  
+  import { useRouter } from 'vue-router'  // Import useRouter
+  import authService from '@/services/authService'  // Make sure this path is correct
+
   export default {
     name: 'RegistrationPage',
     setup() {
+      const router = useRouter()  // Initialize router
+      const username = ref('')  // Add username ref
+      const email = ref('')     // Add email ref
       const password = ref('')
       const confirmPassword = ref('')
-  
+
       const passwordsMatch = computed(() => {
         return password.value === confirmPassword.value
       })
-  
-      const onSubmit = () => {
+
+      const onSubmit = async () => {
         if (passwordsMatch.value) {
-          // Proceed with registration
-          console.log('Registration attempted')
-          // Here you would typically call your registration API
+          try {
+            const response = await authService.register(
+              username.value,
+              email.value,
+              password.value
+            )
+            console.log('Registration successful', response.data)
+            alert('Registration successful! Redirecting to login...')
+            router.push('/login')
+          } catch (error) {
+            console.error('Registration failed', error.response?.data || error.message)
+            alert('Registration failed: ' + (error.response?.data?.message || error.message))
+          }
         } else {
           console.log('Passwords do not match')
+          alert('Passwords do not match')
         }
       }
-  
+
       return {
+        username,  // Expose username to template
+        email,     // Expose email to template
         password,
         confirmPassword,
         passwordsMatch,

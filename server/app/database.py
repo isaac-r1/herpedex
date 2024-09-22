@@ -6,9 +6,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Use environment variables for database connection
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Create the engine
+# Ensure DATABASE_URL is set
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable is not set")
+
+# Create the engine with error handling
 engine = create_engine(DATABASE_URL)
 
 # Create a sessionmaker
