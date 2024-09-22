@@ -79,53 +79,7 @@
 
     <script>
         // JSON array with snake data
-        const snakeData = [
-            {
-                "name": "King Cobra",
-                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Dkmfe28_vtGwPsh8erXyIV0K5BEhuxLJAA&s",
-                "description": "The King Cobra is the world's longest venomous snake. It can grow up to 18 feet long and is found in forests throughout India and Southeast Asia."
-            },
-            {
-                "name": "Ball Python",
-                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi_PIXwvCmT3T5nM6aEcldRyt2csyWjXh0Gw&s",
-                "description": "The Ball Python is a small, non-venomous snake native to West and Central Africa. It is popular in the pet trade due to its docile nature."
-            },
-            {
-                "name": "Eastern Coral Snake",
-                "image": "https://static.scientificamerican.com/sciam/cache/file/B959336D-2A0C-42FF-8755CC63FD2C518B_source.jpg?w=1200",
-                "description": "Known for its bright, colorful bands, the Eastern Coral Snake is highly venomous and found in the southeastern United States."
-            },
-            {
-                "name": "Green Anaconda",
-                "image": "https://t3.ftcdn.net/jpg/02/72/30/28/360_F_272302815_5DIvl0b8XgMlzzo3FYIZC7ZGVo5EG4sB.jpg",
-                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
-            },
-            {
-                "name": "Green Anaconda",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
-                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
-            },
-            {
-                "name": "Green Anaconda",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
-                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
-            },
-            {
-                "name": "Green Anaconda",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
-                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
-            },
-            {
-                "name": "Green Anaconda",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
-                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
-            },
-            {
-                "name": "Green Anaconda",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
-                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
-            }
-        ];
+        const snakeData = {{ snake_data | tojson }};
 
         // Function to generate tiles from the JSON array
         function generateTiles() {
@@ -140,16 +94,16 @@
 
                 // Create the image element
                 const img = document.createElement('img');
-                img.src = snake.image;
+                img.src = snake.square_url;
                 img.alt = snake.name;
 
                 // Create the title (h3)
                 const title = document.createElement('h3');
-                title.textContent = snake.name;
+                title.textContent = snake.preferred_common_name;
 
                 // Create the description (p)
                 const description = document.createElement('p');
-                description.textContent = snake.description;
+                description.textContent = snake.name;
 
                 // Append the image, title, and description to the tile div
                 tile.appendChild(img);
