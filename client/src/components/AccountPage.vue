@@ -2,6 +2,7 @@
     <div class="account">
       <Sidebar />
       <main class="content">
+        <h1>Account Page</h1>
         <slot></slot>
       </main>
     </div>
