@@ -11,36 +11,7 @@
             display: flex;
         }
 
-        /* Sidebar styling */
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #0eb052;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-        }
-
-        .sidebar h2 {
-            padding: 20px;
-            margin: 0;
-            text-align: center;
-            background-color: #7bf832;
-            font-size: 24px;
-        }
-
-        .sidebar a {
-            padding: 15px 20px;
-            color: white;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: #1abc9c;
-        }
+        
 
         /* Main content area */
         .main-content {
@@ -56,21 +27,13 @@
     </style>
 </head>
 <body>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Dashboard</h2>
-        <a href="community">Community</a>
-        <a href="herpedex">Herpedex</a>
-        <a href="plan-trip">Plan A Trip</a>
-        <a href="account">Account</a>
-    </div>
-
+    {% include "sidebar.html" ignore missing %}
+    
     <!-- Main Content -->
     <div class="main-content">
         <h1>Welcome to the Dashboard</h1>
         <p>Select an option from the sidebar to get started.</p>
     </div>
-
+    
 </body>
 </html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herpedex - Snake Descriptions</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        /* Main content area */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+            overflow-y: auto;
+        }
+
+        .main-content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* Tile grid layout */
+        #tile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        /* Tile styling */
+        .tile {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tile img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tile h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .tile p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Make page scrollable */
+        .main-content {
+            height: 100vh;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+
+    {% include "sidebar.html" ignore missing %}
+
+    <!-- Main Content with Tiles -->
+    <div class="main-content">
+        <h1>Snake Descriptions</h1>
+        <div id="tile-grid">
+            
+        </div>
+    </div>
+
+    <script>
+        // JSON array with snake data
+        const snakeData = [
+            {
+                "name": "King Cobra",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Dkmfe28_vtGwPsh8erXyIV0K5BEhuxLJAA&s",
+                "description": "The King Cobra is the world's longest venomous snake. It can grow up to 18 feet long and is found in forests throughout India and Southeast Asia."
+            },
+            {
+                "name": "Ball Python",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi_PIXwvCmT3T5nM6aEcldRyt2csyWjXh0Gw&s",
+                "description": "The Ball Python is a small, non-venomous snake native to West and Central Africa. It is popular in the pet trade due to its docile nature."
+            },
+            {
+                "name": "Eastern Coral Snake",
+                "image": "https://static.scientificamerican.com/sciam/cache/file/B959336D-2A0C-42FF-8755CC63FD2C518B_source.jpg?w=1200",
+                "description": "Known for its bright, colorful bands, the Eastern Coral Snake is highly venomous and found in the southeastern United States."
+            },
+            {
+                "name": "Green Anaconda",
+                "image": "https://t3.ftcdn.net/jpg/02/72/30/28/360_F_272302815_5DIvl0b8XgMlzzo3FYIZC7ZGVo5EG4sB.jpg",
+                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
+            },
+            {
+                "name": "Green Anaconda",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
+                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
+            },
+            {
+                "name": "Green Anaconda",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
+                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
+            },
+            {
+                "name": "Green Anaconda",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
+                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
+            },
+            {
+                "name": "Green Anaconda",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
+                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
+            },
+            {
+                "name": "Green Anaconda",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Corallus_caninus.JPG",
+                "description": "The Green Anaconda is one of the largest snakes in the world, primarily found in the swamps of South America."
+            }
+        ];
+
+        // Function to generate tiles from the JSON array
+        function generateTiles() {
+            console.log("generatig a tile...")
+            const tileGrid = document.getElementById('tile-grid');
+
+            // Loop through each snake object in the array
+            snakeData.forEach(snake => {
+                // Create a new div for the tile
+                const tile = document.createElement('div');
+                tile.className = 'tile';
+
+                // Create the image element
+                const img = document.createElement('img');
+                img.src = snake.image;
+                img.alt = snake.name;
+
+                // Create the title (h3)
+                const title = document.createElement('h3');
+                title.textContent = snake.name;
+
+                // Create the description (p)
+                const description = document.createElement('p');
+                description.textContent = snake.description;
+
+                // Append the image, title, and description to the tile div
+                tile.appendChild(img);
+                tile.appendChild(title);
+                tile.appendChild(description);
+
+                // Append the tile to the tile grid
+                tileGrid.appendChild(tile);
+            });
+        }
+
+        // Call the function to generate tiles when the page loads
+        window.onload = generateTiles;
+    </script>
+</body>
+</html>
