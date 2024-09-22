@@ -63,11 +63,11 @@ const StartTrip: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.body}>
       <Sidebar />
-      <main className={styles.mainContent}>
-        <h2 className={styles.title}>Start a New Trip</h2>
-        <form onSubmit={createTrip} className={styles.form}>
+      <main className={styles.container}>
+        <h2 className={styles.h2}>Start a New Trip</h2>
+        <form onSubmit={createTrip} className={styles.formContainer}>
           <div className={styles.formGroup}>
             <label htmlFor="tripName" className={styles.label}>Trip Name:</label>
             <input
