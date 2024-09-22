@@ -71,8 +71,12 @@
     {% include "sidebar.html" ignore missing %}
 
     <!-- Main Content with Tiles -->
-    <div class="main-content">
-        <h1>Snake Descriptions</h1>
+    <div class="main-content"></div>
+        <h1>Your Snakes</h1>
+        <div id="tile-grid-0"></div>
+        <h1>Snake Library</h1>
+            
+        </div>
         <div id="tile-grid">
             
         </div>
@@ -109,6 +113,34 @@
                 tile.appendChild(img);
                 tile.appendChild(title);
                 tile.appendChild(description);
+
+                // Append the tile to the tile grid
+                tileGrid.appendChild(tile);
+                generateTiles2()
+            });
+        }
+
+        async function generateTiles2() {
+            const tileGrid = document.getElementById('tile-grid-0');
+            const response = await fetch('http://localhost:3001/photos');
+            const data = await response.json().files;
+            // Loop through each snake object in the array
+            data.forEach(fileUrl => {
+                // Create a new div for the tile
+                const tile = document.createElement('div');
+                tile.className = 'tile';
+
+                // Create the image element
+                const img = document.createElement('img');
+                img.src = fileUrl;
+
+                // Create the title (h3)
+                const title = document.createElement('h3');
+                title.textContent = fileUrl.split('/').pop();
+
+                // Append the image, title, and description to the tile div
+                tile.appendChild(img);
+                tile.appendChild(title);
 
                 // Append the tile to the tile grid
                 tileGrid.appendChild(tile);

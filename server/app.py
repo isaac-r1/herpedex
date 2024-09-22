@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, redirect, url_for, request, session
+from flask import render_template, redirect, url_for, request, session, jsonify, send_from_directory
 from werkzeug.utils import secure_filename
 import json 
 from propelauth_flask import init_auth, current_user
@@ -140,7 +140,7 @@ def who_am_i():
 
 
 
-UPLOAD_FOLDER = 'uploads/'
+UPLOAD_FOLDER = 'static/uploads/'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 @app.route('/upload', methods=['POST'])
 def fileUpload():
@@ -148,9 +148,12 @@ def fileUpload():
     logger.info("welcome to upload`")
     file = request.files['file'] 
     filename = secure_filename(file.filename)
-    destination="/".join([UPLOAD_FOLDER, filename])
+    ext = filename.split('.')[1]
+    destination="".join([UPLOAD_FOLDER, "/", request.form['snakeName'], ".", ext])
+    print("Saving to " + "".join([UPLOAD_FOLDER, "/", request.form['snakeName'], ".", ext]))
     file.save(destination)
-    return "success"
+    response="Whatever you wish too return"
+    return response
 
 @app.route('/api/creatures')
 def load_creatures():
@@ -171,6 +174,37 @@ def load_creatures():
     
     # Return the formatted JSON response
     return json.dumps(response, indent=2)
+
+FILES_DIR = 'static/uploads/'
+
+@app.route('/photos', methods=['GET'])
+def list_files():
+    # List all files in the directory
+    try:
+        files = os.listdir('C:/Users/Chinmay/Documents/Github/herpedex/server/static/uploads')
+        file_urls = ""
+        for file_name in files:
+            # Build a URL for each file using url_for
+            # file_url = url_for('serve_file', file_name=file_name, _external=True)
+            file_urls += f'<img src="static/uploads/{file_name}"><h2>{file_name}</h2>'
+            # file_urls.append(file_url)
+
+        # Return the count and file URLs as JSON
+        return file_urls
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/files/<path:file_name>', methods=['GET'])
+def serve_file(file_name):
+    # Serve the requested file from the directory
+    try:
+        return send_from_directory(FILES_DIR, file_name)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 404
+
+
+
 if __name__ == '__main__':
     app.wsgi_app = LoggingMiddleware(app.wsgi_app)
     app.run(port=3001)

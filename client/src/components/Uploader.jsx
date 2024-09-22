@@ -17,7 +17,7 @@ class Uploader extends React.Component {
 
     const data = new FormData();
     data.append('file', this.uploadInput.files[0]);
-    data.append('snakeName', this.snakeName);
+    data.append('snakeName', document.getElementById("snake_name").value);
 
     fetch('http://localhost:3001/upload', {
       method: 'POST',
@@ -539,7 +539,7 @@ class Uploader extends React.Component {
 <option>Xantusia vigilis</option>
 <option>Xenopus laevis</option>
             </datalist>
-            <input  autoComplete="on" list="suggestions"/> 
+            <input  autoComplete="on" list="suggestions" id = "snake_name"/> 
         </div>
         </div>
         <br />
