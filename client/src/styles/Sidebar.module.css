@@ -2,7 +2,7 @@
 .sidebar {
     width: 250px;
     height: 100vh;
-    background-color: #0eb052;
+    background-color: #0f9f4b;
     color: white;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     padding: 20px;
     margin: 0;
     text-align: center;
-    background-color: #7bf832;
+    background-color: #2e7406;
     font-size: 24px;
 }
 

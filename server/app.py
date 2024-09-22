@@ -1,9 +1,17 @@
 from flask import Flask
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, session
+from werkzeug.utils import secure_filename
 import json 
 from propelauth_flask import init_auth, current_user
 import requests
+import os
+import logging
 import pprint
+from pathlib import Path
+
+logging.basicConfig(level=logging.INFO)
+
+logger = logging.getLogger('HELLO WORLD')
 
 class LoggingMiddleware(object):
     def __init__(self, app):
@@ -130,6 +138,19 @@ def who_am_i():
     """This route is protected, current_user is always set"""
     return {"user_id": current_user.user_id}
 
+
+
+UPLOAD_FOLDER = 'uploads/'
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+@app.route('/upload', methods=['POST'])
+def fileUpload():
+    Path(UPLOAD_FOLDER).mkdir(parents=True, exist_ok=True)
+    logger.info("welcome to upload`")
+    file = request.files['file'] 
+    filename = secure_filename(file.filename)
+    destination="/".join([UPLOAD_FOLDER, filename])
+    file.save(destination)
+    return "success"
 
 @app.route('/api/creatures')
 def load_creatures():

@@ -9,7 +9,8 @@ function Sidebar() {
   return (
     <div className={styles.sidebar}>
     <h2>Dashboard</h2>
-    <a href="community">Community</a>
+    <a href="https://www.reddit.com/r/herpetology/">Community</a>
+    <a href="upload">Upload Photo</a>
     <a href="herpedex">Herpedex</a>
     <a href="plan-trip">Plan A Trip</a>
     <a onClick={() => redirectToAccountPage()}>Account</a>

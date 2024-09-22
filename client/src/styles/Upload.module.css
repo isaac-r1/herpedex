@@ -1,0 +1,64 @@
+.body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+.container {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Main content area */
+.mainContent {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow-y: auto;
+}
+
+.mainContent h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Tile grid layout */
+.tileGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Tile styling */
+.tile {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.tile img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tile h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.tile p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Make page scrollable */
+.mainContent {
+    height: 100vh;
+    overflow-y: scroll;
+}
